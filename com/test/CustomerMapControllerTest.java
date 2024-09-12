@@ -8,6 +8,7 @@ import org.junit.gen5.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.gen5.api.Assertions.assertEquals;
 
@@ -23,7 +24,7 @@ public class CustomerMapControllerTest {
         );
 
         InvoiceResponse invoiceResponse = new InvoiceResponse(invoices);
-        int topCustomerId = customerMapController.topCustomerSpending(invoiceResponse);
+        Map<Integer, Double> topCustomerId = customerMapController.topCustomerSpending(invoiceResponse);
 
         assertEquals(1, topCustomerId, "The customer ID with the highest spending should be 1");
     }
